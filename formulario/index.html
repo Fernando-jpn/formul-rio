@@ -11,7 +11,7 @@
 <body>
      <div class="container">
         <section class="header">
-            <h2>Nova conta</h2>
+            <h2>Cadastro</h2>
         </section>
 
         <form id="form" class="form">
@@ -39,7 +39,43 @@
                 <a>Aqui vai a mensagem de erro....</a>
             </div>
 
-            <button type="submit">Cadastrar</button>
+            <div class="form-content">
+                <label for="genero">Selecione seu gênero</label>
+                <select id="genero" name="genero">
+                    <option value=""></option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            
+            <div class="form-content">
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" min="1900-01-01" max="2024-12-31" required>
+            </div>
+
+            <div class="form-content">
+                <label for="estado">Estado</label>
+                    <select id="estado" name="estado" required onchange="atualizarCidades()">
+                        <option value="">Selecione um estado</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="ES">Espírito Santo</option>
+                    </select>
+
+                <label for="cidade">Cidade</label>
+                    <select id="cidade" name="cidade" required>
+                        <option value="">Selecione uma cidade</option>
+                    </select>
+            </div>
+
+            <div class="form-content">
+                <label for="descricao"></label>
+                <textarea name="descricao" id="descricao" rows="5" cols="80" placeholder="Descição Pessoal" required></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
 
         </form>
 
